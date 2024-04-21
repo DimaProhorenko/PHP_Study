@@ -1,21 +1,21 @@
 <?php
+require_once 'Validator.php';
+
+
 $heading = 'New Note';
 $config = require 'config.php';
 $db = new DB($config['database'], 'root', 'qwerty');
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = [];
 
-    if (strlen($_POST['title']) === 0) {
-        $errors['title'] = 'Title can not be empty';
+    if (!Validator::string($_POST['title'], 1, 255)) {
+        $errors['title'] = 'Title must be in range 1 - 255 characters';
     }
 
-    if (strlen($_POST['body']) === 0) {
-        $errors['body'] = 'Note body can not be empty';
-    }
-
-    if (strlen($_POST['body'] > 1000)) {
-        $errors['body'] = 'The body can not be more than 1000 characters';
+    if (!Validator::string($_POST['body'], 1, 1000)) {
+        $errors['body'] = 'The note body must be in range 1 - 1_000 characters';
     }
 
     if (empty($errors)) {
