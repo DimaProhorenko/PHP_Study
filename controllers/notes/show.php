@@ -12,4 +12,4 @@ $note = $db->query('select * from notes where id = ?', [$_GET['id']])->fetchOrAb
 authorize($note['creator_id'] === 4);
 
 
-require 'views/note.view.php';
+require 'views/notes/show.view.php';
