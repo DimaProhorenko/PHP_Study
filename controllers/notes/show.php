@@ -1,7 +1,7 @@
 <?php
 $heading = 'Note';
 
-$config = require 'config.php';
+$config = require base_path('config.php');
 $db = new DB($config['database'], 'root', 'qwerty');
 
 
@@ -12,4 +12,4 @@ $note = $db->query('select * from notes where id = ?', [$_GET['id']])->fetchOrAb
 authorize($note['creator_id'] === 4);
 
 
-require 'views/notes/show.view.php';
+require view('/notes/show.view.php');
