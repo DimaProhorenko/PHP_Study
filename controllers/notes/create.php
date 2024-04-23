@@ -1,5 +1,5 @@
 <?php
-require_once base_path('Validator.php');
+require_once base_path('core/Validator.php');
 
 
 $heading = 'New Note';
