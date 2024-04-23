@@ -5,6 +5,8 @@ require BASE_PATH . 'helpers/utils.php';
 require base_path('core/Database.php');
 require base_path('core/Response.php');
 require base_path('core/Router.php');
+require base_path('core/Container.php');
+require base_path('bootstrap.php');
 
 $router = new Router();
 require base_path('routes.php');
