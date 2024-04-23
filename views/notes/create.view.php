@@ -3,7 +3,7 @@
 <?php require view('partials/banner.php') ?>
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <form method="POST">
+        <form method="POST" action="">
             <div class="p-4 bg-white max-w-md space-y-4 rounded-lg shadow-md">
                 <div>
                     <label for="title" class="block mb-1 font-medium">Title</label>

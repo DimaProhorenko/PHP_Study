@@ -7,6 +7,7 @@ $config = require base_path('config.php');
 $db = new DB($config['database'], 'root', 'qwerty');
 
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = [];
 
@@ -24,6 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'body' => htmlspecialchars($_POST['body']),
             'creator_id' => 4
         ]);
+        header('location: /notes');
+        die();
     }
 }
 

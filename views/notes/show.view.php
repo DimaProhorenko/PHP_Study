@@ -7,6 +7,7 @@
         <p><?= $note['body'] ?></p>
 
         <form action="" method="POST" class="mt-6">
+            <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="note_id" value="<?= $note['id'] ?>">
             <button class="bg-red-500 px-4 py-2 text-white rounded-full hover:bg-red-400 transition-colors">Delete</button>
         </form>
