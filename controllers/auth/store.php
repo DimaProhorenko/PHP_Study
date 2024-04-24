@@ -18,7 +18,11 @@ if (!Validator::password($password)) {
 if (!count($errors)) {
     $db = App::resolve('Core/DB');
     $user_in_db = $db->query('SELECT * FROM users WHERE email = :email', ['email' => $email])->fetch();
-    if (!$user) {
-        // Save to db
+    if (!$user_in_db) {
+        $db->query('INSERT INTO users(email, password) VALUES (:email, :password)', ['email' => $email, 'password' => $password])->fetch();
+        header('location: /');
+    } else {
+        // redirect to login page
+        header('location: /');
     }
 }
