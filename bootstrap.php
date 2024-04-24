@@ -10,4 +10,5 @@ $container->bind('Core/DB', function () {
 
 $db = $container->resolve('Core/DB');
 
-dd($db);
+
+App::set_container($container);

@@ -6,11 +6,14 @@
         <h4 class="text-4xl font-medium mb-4"><?= $note['title'] ?></h4>
         <p><?= $note['body'] ?></p>
 
-        <form action="" method="POST" class="mt-6">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="note_id" value="<?= $note['id'] ?>">
-            <button class="bg-red-500 px-4 py-2 text-white rounded-full hover:bg-red-400 transition-colors">Delete</button>
-        </form>
+        <div class="flex gap-4 items-center mt-6">
+            <form action="" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="note_id" value="<?= $note['id'] ?>">
+                <button class="bg-red-500 px-4 py-2 text-white rounded-full hover:bg-red-700 transition-colors">Delete</button>
+            </form>
+            <a href="/note/edit?id=<?= $note['id'] ?>" class="block px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-700">Edit</a>
+        </div>
     </div>
 </main>
 

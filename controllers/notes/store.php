@@ -1,9 +1,10 @@
 <?php
 require_once base_path('core/Validator.php');
 
-$config = require base_path('config.php');
-$db = new DB($config['database'], 'root', 'qwerty');
+// $config = require base_path('config.php');
+// $db = new DB($config['database'], 'root', 'qwerty');
 
+$db = App::resolve('Core/DB');
 
 
 $errors = [];

@@ -1,6 +1,6 @@
 <?php
-$config = require base_path('config.php');
-$db = new DB($config['database'], 'root', 'qwerty');
+
+$db = App::resolve('Core/DB');
 $delete_id = $_POST['note_id'];
 $note = $db->query('select * from notes where id = ?', [$delete_id])->fetchOrAbort(Response::PAGE_NOT_FOUND);
 

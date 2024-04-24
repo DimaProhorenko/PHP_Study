@@ -17,7 +17,6 @@ class Container
         }
 
         $resolver = $this->bindings[$key];
-        var_dump($resolver);
         return call_user_func($resolver);
     }
 }

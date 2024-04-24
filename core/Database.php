@@ -33,7 +33,7 @@ class DB
         return $this->statement->fetchAll();
     }
 
-    public function fetchOrAbort($code)
+    public function fetchOrAbort($code = 404)
     {
         $result = $this->fetch();
 
