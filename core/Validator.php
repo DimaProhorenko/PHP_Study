@@ -11,4 +11,9 @@ class Validator
     {
         return filter_var($value, FILTER_VALIDATE_EMAIL);
     }
+
+    public static function password($value)
+    {
+        return static::string($value, 6, 16);
+    }
 }

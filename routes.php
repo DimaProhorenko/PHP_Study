@@ -22,3 +22,6 @@ $router->delete('/note', 'controllers/notes/delete.php');
 $router->patch('/note', 'controllers/notes/update.php');
 
 $router->get('/note/edit', 'controllers/notes/edit.php');
+
+$router->get('/signup', 'controllers/auth/signup.php');
+$router->post('/signup', 'controllers/auth/store.php');

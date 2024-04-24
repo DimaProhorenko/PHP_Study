@@ -11,7 +11,7 @@ if (!Validator::string($_POST['title'], 1, 255)) {
     $errors['title'] = 'Title must be in range 1 - 255 characters';
 }
 
-if (!Validator::string($_POST['body'], 1, 1000)) {
+if (!Validator::string($_POST['body'], 1, 5)) {
     $errors['body'] = 'The note body must be in range 1 - 1_000 characters';
 }
 
@@ -24,7 +24,3 @@ if (empty($errors)) {
     header('location: /notes');
     die();
 }
-
-
-
-dd($note);
