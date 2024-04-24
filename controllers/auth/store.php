@@ -23,6 +23,6 @@ if (!count($errors)) {
         header('location: /');
     } else {
         // redirect to login page
-        header('location: /');
+        header('location: /login');
     }
 }

@@ -8,7 +8,7 @@
 
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <div class="mb-4">
-                <h3 class="text-3xl font-medium">Sign up for a new account</h3>
+                <h3 class="text-3xl font-medium">Login into your account</h3>
             </div>
             <form class="space-y-6" action="/signup" method="POST">
                 <div>
@@ -28,13 +28,13 @@
                 </div>
 
                 <div>
-                    <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign up</button>
+                    <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Login</button>
                 </div>
             </form>
 
             <p class="mt-10 text-center text-sm text-gray-500">
-                Already have an account?
-                <a href="/login" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign in</a>
+                Don't have an account?
+                <a href="/signup" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign up</a>
             </p>
         </div>
     </div>

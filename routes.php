@@ -25,3 +25,5 @@ $router->get('/note/edit', 'controllers/notes/edit.php');
 
 $router->get('/signup', 'controllers/auth/signup.php');
 $router->post('/signup', 'controllers/auth/store.php');
+
+$router->get('/login', 'controllers/auth/login.php');
