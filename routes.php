@@ -1,12 +1,4 @@
 <?php
-// return [
-//     '/' => 'controllers/index.php',
-//     '/about' => 'controllers/about.php',
-//     '/notes' => 'controllers/notes/index.php',
-//     '/notes/create' => 'controllers/notes/create.php',
-//     '/note' => 'controllers/notes/show.php',
-//     '/contact' => 'controllers/contact.php',
-// ];
 
 
 $router->get('/', 'controllers/index.php');
@@ -26,4 +18,7 @@ $router->get('/note/edit', 'controllers/notes/edit.php');
 $router->get('/signup', 'controllers/auth/signup.php')->only('guest');
 $router->post('/signup', 'controllers/auth/store.php');
 
-$router->get('/login', 'controllers/auth/login.php');
+$router->get('/login', 'controllers/sessions/create.php')->only('guest');
+$router->post('/login', 'controllers/sessions/store.php')->only('guest');
+
+$router->delete('/logout', 'controllers/sessions/destroy.php')->only('auth');

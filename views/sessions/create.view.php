@@ -10,7 +10,7 @@
             <div class="mb-4">
                 <h3 class="text-3xl font-medium">Login into your account</h3>
             </div>
-            <form class="space-y-6" action="/signup" method="POST">
+            <form class="space-y-6" action="/login" method="POST">
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                     <div class="mt-2">
