@@ -12,6 +12,7 @@ require base_path('core/Database.php');
 require base_path('core/Response.php');
 require base_path('core/Router.php');
 require base_path('core/Container.php');
+require base_path('core/Authenticator.php');
 require base_path('bootstrap.php');
 
 

@@ -22,6 +22,12 @@ function urlIs($value)
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
+function redirect($path)
+{
+    header("location: {$path}");
+    exit();
+}
+
 function abort($code = Response::PAGE_NOT_FOUND)
 {
     http_response_code($code);
