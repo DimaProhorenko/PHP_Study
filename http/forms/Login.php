@@ -21,4 +21,9 @@ class Login
     {
         return $this->errors;
     }
+
+    public function addError($field, $value)
+    {
+        $this->errors[$field] = $value;
+    }
 }

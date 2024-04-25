@@ -10,6 +10,7 @@ require base_path('helpers/auth.php');
 require base_path('core/App.php');
 require base_path('core/Database.php');
 require base_path('core/Response.php');
+require base_path('core/Session.php');
 require base_path('core/Router.php');
 require base_path('core/Container.php');
 require base_path('core/Authenticator.php');
@@ -22,3 +23,5 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
 $router->route($uri, $method);
+
+Session::unflash();

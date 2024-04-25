@@ -7,27 +7,13 @@ $password = $_POST['password'];
 
 $form = new Login();
 
-if (!$form->validate($email, $password)) {
-    // Store errors in cookies
-    // Redirect
+if ($form->validate($email, $password)) {
+
+    if ((new Authenticator)->attempt($email, $password)) {
+        redirect('/');
+    }
+    $form->addError('email', 'No matching account found');
 }
 
-$auth = new Authenticator();
-if ($auth->attempt($email, $password)) {
-    redirect('/');
-}
-
-dd($auth);
-
-// $db = App::resolve('Core/DB');
-// $user = $db->query('SELECT * from users WHERE email = :email', ['email' => $_POST['email']])->fetch();
-
-// if (!$user) {
-//     throw new Exception('No users found');
-// }
-
-// if (password_verify($_POST['password'], $user['password'])) {
-//     login($user);
-//     header('location: /');
-//     exit();
-// }
+Session::flash('errors', $form->errors());
+redirect('/login');
